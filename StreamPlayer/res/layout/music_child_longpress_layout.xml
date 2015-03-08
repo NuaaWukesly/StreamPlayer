@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical|center_horizontal"
+    android:background="@android:color/darker_gray"
+    android:orientation="vertical" >
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="功能菜单"
+        android:textSize="18sp" />
+
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="3dp"
+        android:background="@android:color/white"></LinearLayout>
+	<HorizontalScrollView
+	    android:layout_width="fill_parent"
+	    android:layout_height="70dp"
+	    android:paddingTop="5dp">
+	    <LinearLayout 
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent"
+	        android:paddingBottom="10dp"
+            android:paddingTop="10dp" >
+	        <Button 
+	        	android:layout_height="match_parent"
+	        	android:layout_width="wrap_content"
+	        	android:id="@+id/music_list_child_addtolist"
+	        	android:text="添加到"/>
+	    	<Button 
+	       	 	android:layout_height="match_parent"
+	        	android:layout_width="wrap_content"
+	        	android:id="@+id/music_list_child_altername"
+	        	android:text="重命名"/>
+	    	<Button 
+	       	 	android:layout_height="match_parent"
+	        	android:layout_width="wrap_content"
+	        	android:id="@+id/music_list_child_songinfo"
+	        	android:text="媒体信息"/>
+	    	<Button 
+	       	 	android:layout_height="match_parent"
+	        	android:layout_width="wrap_content"
+	        	android:id="@+id/music_list_child_share"
+	        	android:text="分享到"/>
+	    	<Button 
+	       	 	android:layout_height="match_parent"
+	        	android:layout_width="wrap_content"
+	        	android:id="@+id/music_list_child_remove"
+	        	android:text="移出列表"/>
+	    	<Button
+                android:id="@+id/music_list_child_cancelbnt"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:text="取消" />
+	    </LinearLayout>
+	</HorizontalScrollView>
+
+</LinearLayout>

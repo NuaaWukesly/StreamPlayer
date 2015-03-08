@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="选择路径"
+            android:textSize="20sp" />
+
+    	<LinearLayout 
+       	android:layout_height="3dp"
+        android:layout_width="fill_parent"
+        android:background="@android:color/white"></LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <ListView 
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="fill_parent"
+	    	android:id="@+id/scanfile_listview"></ListView>
+    </LinearLayout>
+
+    <LinearLayout 
+	     android:layout_height="3dp"
+	     android:layout_width="fill_parent"
+	     android:background="@android:color/white"></LinearLayout>
+	<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="100dp"
+	    android:orientation="vertical" >
+        
+	    <LinearLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="40dp"
+	        android:orientation="horizontal"
+	        android:paddingLeft="5dp"
+	        android:paddingRight="5dp" >
+
+	    <TextView
+	        android:layout_width="wrap_content"
+	        android:layout_height="40dp"
+	        android:gravity="center_horizontal|center_vertical"
+	        android:text="路径 ：" />
+
+	    <TextView
+	        android:id="@+id/scanfile_path_textview"
+	        android:layout_width="fill_parent"
+	        android:layout_height="40dp"
+	        android:gravity="center_vertical|center_horizontal"
+	        android:scrollHorizontally="true"
+	        android:singleLine="true" />
+
+	    </LinearLayout>
+	    <LinearLayout 
+	        android:layout_height="3dp"
+	        android:layout_width="fill_parent"
+	        android:background="@android:color/white"></LinearLayout>
+	    <HorizontalScrollView 
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent"
+	        android:layout_gravity="bottom">
+	        
+	         <LinearLayout
+	             android:layout_width="fill_parent"
+	             android:layout_height="fill_parent"
+	             android:layout_gravity="center_horizontal"
+	             android:orientation="horizontal" >
+
+	        	<Button
+	        	    android:id="@+id/scanfile_return_bnt"
+	        	    android:layout_width="80dp"
+	        	    android:layout_height="50dp"
+	        	    android:text="返回" />
+
+	        	<Button
+	        	    android:id="@+id/scanfile_play_bnt"
+	        	    android:layout_width="80dp"
+	        	    android:layout_height="50dp"
+	        	    android:text="播放" />
+
+	        	<Button
+	        	    android:id="@+id/scanfile_ok_bnt"
+	        	    android:layout_width="80dp"
+	        	    android:layout_height="50dp"
+	        	    android:text="确定" />
+
+	        	<Button
+	        	    android:id="@+id/scanfile_cancel_bnt"
+	        	    android:layout_width="80dp"
+	        	    android:layout_height="50dp"
+	        	    android:text="取消" />
+
+	        </LinearLayout>
+	    </HorizontalScrollView>
+	    
+	</LinearLayout>
+</LinearLayout>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@android:color/darker_gray">
+  <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical|center_horizontal"
+            android:paddingLeft="15dp"
+            android:text="选择主题"
+            android:textSize="18sp" />
+
+    	</LinearLayout>
+		<LinearLayout 
+	    	android:layout_height="3dp"
+	    	android:layout_width="fill_parent"
+	    	android:background="@android:color/white">
+		</LinearLayout>
+
+		<HorizontalScrollView
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="70dp"
+	    	android:paddingTop="5dp" >
+
+       	 <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp" >
+
+            <Button 
+	        	android:layout_height="match_parent"
+	        	android:layout_width="100dp"
+	        	android:id="@+id/bgtheme_bg1"
+	        	android:text="背景1"/>
+	    	<Button 
+	        	android:layout_height="match_parent"
+	        	android:layout_width="100dp"
+	        	android:id="@+id/bgtheme_bg2"
+	        	android:text="背景2"/>
+	    	<Button 
+	        	android:layout_height="match_parent"
+	        	android:layout_width="100dp"
+	        	android:id="@+id/bgtheme_bg3"
+	        	android:text="背景3"/>
+	    	<Button 
+	        	android:layout_height="match_parent"
+	        	android:layout_width="100dp"
+	        	android:id="@+id/bgtheme_bg4"
+	        	android:text="背景4"/>
+	    	<Button
+                android:id="@+id/bgtheme_bg5"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:text="背景5" />
+	    	<Button
+                android:id="@+id/bgtheme_bg6"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:text="背景6" />
+	    	<Button
+                android:id="@+id/bgtheme_bg7"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:text="背景7" />
+	    	<Button
+                android:id="@+id/bgtheme_bg8"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:text="背景8" />
+	    	<Button
+                android:id="@+id/bgtheme_bg9"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:text="背景9" />
+	    	
+	    	<Button
+                android:id="@+id/bgtheme_bg10"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:text="背景10" />
+	    	<Button
+                android:id="@+id/bgtheme_bg11"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:text="背景11" />
+	    	<Button
+                android:id="@+id/bgtheme_bg12"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:text="背景12" />
+        </LinearLayout>
+	</HorizontalScrollView>
+</LinearLayout>

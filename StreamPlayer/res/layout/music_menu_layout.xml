@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="100dp">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:id="@+id/music_menu_linearayout01" 
+        android:background="@color/music_titlebar_bgcolor">
+
+        <Button
+            android:id="@+id/music_menu_common"
+            android:layout_width="83dp"
+            android:layout_height="40dp"
+            android:layout_weight="0.33"
+            android:text="常用"
+            android:textColor="@color/text_color_white"
+            android:background="@color/music_titlebar_bgcolor"/>
+        <Button
+            android:id="@+id/music_menu_setting"
+            android:layout_width="83dp"
+            android:layout_height="40dp"
+            android:layout_weight="0.33"
+            android:text="设置"
+            android:textColor="@color/text_color_white"
+            android:background="@color/music_titlebar_bgcolor"/>
+
+        <Button
+            android:id="@+id/music_menu_help"
+            android:layout_width="83dp"
+            android:layout_height="40dp"
+            android:layout_weight="0.33"
+            android:text="帮助"
+            android:textColor="@color/text_color_white" 
+            android:background="@color/music_titlebar_bgcolor">
+        </Button>
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/music_menu_linearayout01">
+        
+        <ViewFlipper
+            android:id="@+id/music_menu_viewflipper"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/menu_bg_grey"
+            android:flipInterval="3000"
+            android:inAnimation="@anim/push_left_in"
+            android:outAnimation="@anim/push_left_out"
+            android:persistentDrawingCache="animation" >
+            
+            <!-- music common page -->
+            <LinearLayout 
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/menu_page1">
+                
+                <!-- music menu common show LRC -->
+                <LinearLayout 
+                    android:layout_width="62dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.25"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical">
+                    <ImageButton 
+                    android:layout_width="fill_parent"
+                    android:layout_height="62dp"
+                    android:layout_weight="0.7"
+                    android:background="@drawable/ic_copyfile"
+                    android:id="@+id/music_menu_musicLrc"/>
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:layout_weight="0.3"
+                        android:text="歌词修正"
+                        android:enabled="false"
+                        android:editable="false"
+                        android:textColor="@color/text_color_white" />
+                </LinearLayout>
+                
+                <!-- music menu common change theme -->
+                <LinearLayout 
+                    android:layout_width="62dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.25"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical">
+                    <ImageButton 
+                    android:layout_width="fill_parent"
+                    android:layout_height="62dp"
+                    android:layout_weight="0.7"
+                    android:background="@drawable/ic_theme"
+                    android:id="@+id/music_menu_theme"/>
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:layout_weight="0.3"
+                        android:text="改变主题"
+                        android:enabled="false"
+                        android:editable="false"
+                        android:textColor="@color/text_color_white" />
+                </LinearLayout>
+                
+                <!-- music menu common refresh music list -->
+				<LinearLayout 
+                    android:layout_width="62dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.25"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical">
+                    <ImageButton 
+                    android:layout_width="fill_parent"
+                    android:layout_height="62dp"
+                    android:layout_weight="0.7"
+                    android:background="@drawable/ic_refresh"
+                    android:id="@+id/music_menu_refresh"/>
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:layout_weight="0.3"
+                        android:text="刷新曲库"
+                        android:enabled="false"
+                        android:editable="false"
+                        android:textColor="@color/text_color_white" />
+                </LinearLayout>
+				                
+				<!-- music menu common exit progrom -->
+				<LinearLayout 
+                    android:layout_width="62dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.25"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical">
+                    <ImageButton 
+                    android:layout_width="fill_parent"
+                    android:layout_height="62dp"
+                    android:layout_weight="0.7"
+                    android:background="@drawable/ic_exit"
+                    android:id="@+id/music_menu_exit"/>
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:layout_weight="0.3"
+                        android:text="退出应用"
+                        android:enabled="false"
+                        android:editable="false"
+                        android:textColor="@color/text_color_white" />
+                </LinearLayout> 
+            </LinearLayout>
+                      
+            
+            
+            <!-- music menu setting page -->
+            <LinearLayout 
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/menu_page2">
+                
+                <!-- music menu setting online in -->
+                <LinearLayout 
+                    android:layout_width="62dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.25"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical">
+                    <ImageButton 
+                    android:layout_width="fill_parent"
+                    android:layout_height="62dp"
+                    android:layout_weight="0.7"
+                    android:background="@drawable/ic_menu_online"
+                    android:id="@+id/music_menu_online"/>
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:layout_weight="0.3"
+                        android:text="网络接入"
+                        android:enabled="false"
+                        android:editable="false"
+                        android:textColor="@color/text_color_white" />
+                </LinearLayout>
+                
+                <!-- music menu setting bluetooth share -->
+                <LinearLayout 
+                    android:layout_width="62dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.25"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical">
+                    <ImageButton 
+                    android:layout_width="fill_parent"
+                    android:layout_height="62dp"
+                    android:layout_weight="0.7"
+                    android:background="@drawable/ic_bluetooth"
+                    android:id="@+id/music_menu_bluetooth"/>
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:layout_weight="0.3"
+                        android:text="蓝牙发送"
+                        android:enabled="false"
+                        android:editable="false"
+                        android:textColor="@color/text_color_white" />
+                </LinearLayout>
+                
+                <!-- music menu setting download path -->
+				<LinearLayout 
+                    android:layout_width="62dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.25"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical">
+                    <ImageButton 
+                    android:layout_width="fill_parent"
+                    android:layout_height="62dp"
+                    android:layout_weight="0.7"
+                    android:background="@drawable/ic_savefile"
+                    android:id="@+id/music_menu_savepath"/>
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:layout_weight="0.3"
+                        android:text="下载路径"
+                        android:enabled="false"
+                        android:editable="false"
+                        android:textColor="@color/text_color_white" />
+                </LinearLayout>
+				                
+				<!-- music menu setting timing -->
+				<LinearLayout 
+                    android:layout_width="62dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.25"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical">
+                    <ImageButton 
+                    android:layout_width="fill_parent"
+                    android:layout_height="62dp"
+                    android:layout_weight="0.7"
+                    android:background="@drawable/ic_timing"
+                    android:id="@+id/music_menu_timing"/>
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:layout_weight="0.3"
+                        android:text="定时设置"
+                        android:enabled="false"
+                        android:editable="false"
+                        android:textColor="@color/text_color_white" />
+                </LinearLayout> 
+            </LinearLayout>
+            
+
+
+            <!-- music menu help page -->
+            <LinearLayout 
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/menu_page3">
+                
+                <!-- music menu help flux statistics -->
+                <LinearLayout 
+                    android:layout_width="62dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.25"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical">
+                    <ImageButton 
+                    android:layout_width="fill_parent"
+                    android:layout_height="62dp"
+                    android:layout_weight="0.7"
+                    android:background="@drawable/ic_flux"
+                    android:id="@+id/music_menu_flux"/>
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:layout_weight="0.3"
+                        android:text="流量统计"
+                        android:enabled="false"
+                        android:editable="false"
+                        android:textColor="@color/text_color_white" />
+                </LinearLayout>
+                
+                <!-- music menu help download list -->
+                <LinearLayout 
+                    android:layout_width="62dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.25"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical">
+                    <ImageButton 
+                    android:layout_width="fill_parent"
+                    android:layout_height="62dp"
+                    android:layout_weight="0.7"
+                    android:background="@drawable/ic_download"
+                    android:id="@+id/music_menu_downloadlist"/>
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:layout_weight="0.3"
+                        android:text="下载列表"
+                        android:enabled="false"
+                        android:editable="false"
+                        android:textColor="@color/text_color_white" />
+                </LinearLayout>
+                
+                <!-- music menu help  opinion return-->
+				<LinearLayout 
+                    android:layout_width="62dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.25"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical">
+                    <ImageButton 
+                    android:layout_width="fill_parent"
+                    android:layout_height="62dp"
+                    android:layout_weight="0.7"
+                    android:background="@drawable/ic_share"
+                    android:id="@+id/music_menu_opinion"/>
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:layout_weight="0.3"
+                        android:text="意见反馈"
+                        android:enabled="false"
+                        android:editable="false"
+                        android:textColor="@color/text_color_white" />
+                </LinearLayout>
+				                
+				<!-- music menu help develop team -->
+				<LinearLayout 
+                    android:layout_width="62dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.25"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical">
+                    <ImageButton 
+                    android:layout_width="fill_parent"
+                    android:layout_height="62dp"
+                    android:layout_weight="0.7"
+                    android:background="@drawable/ic_bookmark"
+                    android:id="@+id/music_menu_devteam"/>
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:layout_weight="0.3"
+                        android:text="开发团队"
+                        android:enabled="false"
+                        android:editable="false"
+                        android:textColor="@color/text_color_white" />
+                </LinearLayout> 
+            </LinearLayout>
+            
+        </ViewFlipper>"
+        
+    </LinearLayout>
+
+</RelativeLayout>

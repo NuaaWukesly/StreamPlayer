@@ -1,0 +1,276 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    tools:context=".MusicPlayer" 
+    android:background="@drawable/bg2"
+    android:id="@+id/music">
+
+    <!-- titlebar  android:background="@color/menu_kuwo"-->
+
+    <LinearLayout
+        android:id="@+id/music_linearlayout01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+    	
+    	<!-- music play page button -->
+    	<ImageButton
+        	android:layout_width="50dp"
+        	android:layout_height="wrap_content"
+        	android:id="@+id/music_music"
+        	android:background="@drawable/ic_music"
+        	android:layout_weight="0.2"/>
+    	
+		<!-- music list page button -->
+    	<ImageButton
+    	    android:id="@+id/music_list"
+    	    android:layout_width="50dp"
+    	    android:layout_height="wrap_content"
+    	    android:layout_gravity="center"
+    	    android:layout_weight="0.2"
+    	    android:background="@drawable/ic_list" />
+
+    	<!-- online music page button -->
+    	<ImageButton
+        	android:layout_width="50dp"
+        	android:layout_height="wrap_content"
+        	android:id="@+id/music_online"
+        	android:background="@drawable/ic_online"
+        	android:layout_weight="0.2"/>
+    	
+		<!-- adjust player voice button -->
+    	<ImageButton
+    	    android:id="@+id/music_voice"
+    	    android:layout_width="50dp"
+    	    android:layout_height="wrap_content"
+    	    android:layout_gravity="center"
+    	    android:layout_weight="0.2"
+    	    android:background="@drawable/ic_voice" />
+	
+    	<!-- change to video player button -->
+    	<ImageButton
+        	android:layout_width="50dp"
+        	android:layout_height="wrap_content"
+        	android:id="@+id/music_video"
+        	android:background="@drawable/ic_video"
+        	android:layout_weight="0.2"/>
+	</LinearLayout>
+	<LinearLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="3dp"
+	    android:background="@android:color/darker_gray"
+	    android:layout_below="@+id/music_linearlayout01"></LinearLayout>
+    
+    <!-- center of this page layout android:background="@color/music_page_bgcolor"-->
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/music_linearlayout02"
+        android:layout_below="@+id/music_linearlayout01"
+        android:layout_above="@+id/music_linearlayout03"
+        
+        >
+		<!-- android:background="@drawable/ic_blue" -->
+    	<ViewFlipper
+    	    android:id="@+id/music_viewflipper"
+    	    android:layout_width="match_parent"
+    	    android:layout_height="match_parent"
+    	    android:flipInterval="3000"
+    	    android:persistentDrawingCache="animation" >
+        	
+    	    <!-- musicplayer main page -->
+			<LinearLayout 
+			    android:layout_width="fill_parent"
+			    android:layout_height="fill_parent"
+			    android:orientation="vertical"
+			    android:id="@+id/music_page1">
+  
+    	       <LinearLayout
+    	           android:id="@+id/Linear_songLRC"
+    	           android:layout_width="fill_parent"
+    	           android:layout_height="fill_parent"
+    	           android:layout_weight="0.7"
+    	           
+    	            >
+    	           <!-- android:background="@drawable/ic_blue" -->
+    	       </LinearLayout>
+				
+    	       <LinearLayout 
+	    		android:layout_width="fill_parent"
+	    		android:layout_height="3dp"
+	    		android:background="@android:color/darker_gray"
+	    		android:layout_below="@+id/Linear_songLRC"></LinearLayout>
+    	       
+    	    	<LinearLayout
+    	    	    android:layout_width="fill_parent"
+    	    	    android:layout_height="80dp"
+    	    	    android:layout_weight="0.3"
+    	    	    android:gravity="center_horizontal"
+    	    	    android:orientation="vertical" >
+
+    	    	    <TextView
+    	    	        android:id="@+id/music_showsongname"
+    	    	        android:layout_width="300px"
+    	    	        android:layout_height="wrap_content"
+    	    	        android:layout_centerInParent="true"
+    	    	        android:layout_x="61px"
+    	    	        android:layout_y="69px"
+    	    	        android:focusable="true"
+    	    	        android:gravity="center_horizontal"
+    	    	        android:singleLine="true"
+    	    	        android:text="欢迎使用流媒体音乐播放器！" />
+
+    	    	    <LinearLayout
+    	    	        android:layout_width="fill_parent"
+    	    	        android:layout_height="50dp"
+    	    	        android:layout_gravity="center_horizontal"
+    	    	        android:layout_weight="0.7"
+    	    	        android:orientation="horizontal" >
+
+    	    	        <TextView
+    	    	            android:id="@+id/music_showsongcurr"
+    	    	            android:layout_width="80dp"
+    	    	            android:layout_height="25dp"
+    	    	            android:layout_weight="0.15"
+    	    	            android:gravity="center_horizontal" 
+    	    	            android:text="00:00:00"/>
+
+    	    	         <SeekBar
+    	    	             android:id="@+id/music_seekbar"
+    	    	             android:layout_width="200dp"
+    	    	             android:layout_height="30dp"
+    	    	             android:layout_gravity="top|start"
+    	    	             android:layout_weight="0.7" />
+
+    	    	         <TextView
+    	    	             android:id="@+id/music_showsonglen"
+    	    	             android:layout_width="80dp"
+    	    	             android:layout_height="25dp"
+    	    	             android:layout_weight="0.15"
+    	    	             android:gravity="center_horizontal" 
+    	    	             android:text="00:00:00"/>
+
+    	    	    </LinearLayout>
+    	    	   
+    	    	</LinearLayout>
+    	    	
+    	        <VideoView 
+    	            android:layout_width="fill_parent"
+    	            android:layout_height="1dp"
+    	            android:id="@+id/music_videoview"/>
+    	     
+			</LinearLayout>
+    	    
+    	    <!-- music main list page android:background="@drawable/ic_blue"-->
+
+    	    <ExpandableListView
+    	        android:id="@+id/musicpage_mainListview"
+    	        android:layout_width="fill_parent"
+    	        android:layout_height="fill_parent"
+    	         >
+    	    </ExpandableListView>
+    	    
+    	    <!-- music web page -->
+
+    	    <WebView
+    	        android:id="@+id/musicpage_onlineweb"
+    	        android:layout_width="fill_parent"
+    	        android:layout_height="fill_parent" />
+			
+    	    <!-- music currplaylist page -->
+    	    
+    	    <LinearLayout 
+			    android:layout_width="fill_parent"
+			    android:layout_height="fill_parent"
+			    android:orientation="vertical"
+			    android:id="@+id/music_page4">
+    	        
+			</LinearLayout>
+			
+    	    
+			<!-- scan file page -->
+			<LinearLayout 
+			    android:layout_width="fill_parent"
+			    android:layout_height="fill_parent"
+			    android:orientation="vertical"
+			    android:id="@+id/music_page5">
+    	        
+			</LinearLayout>
+    	</ViewFlipper>
+    	
+    </LinearLayout>
+    
+    
+    <!-- toolbar android:background="@color/menu_kuwo"-->
+
+	<LinearLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="3dp"
+	    android:background="@android:color/darker_gray"
+	    android:layout_below="@+id/music_linearlayout02"></LinearLayout>
+    <LinearLayout
+        android:id="@+id/music_linearlayout03"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+        
+        <!-- play mode button -->
+
+        <ImageButton
+            android:id="@+id/music_toolbar_mode"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.2"
+            android:alpha="150" />
+
+        <!-- premusic button -->
+
+        <ImageButton
+            android:id="@+id/music_toolbar_pre"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.2"
+            android:alpha="150"
+            android:background="@drawable/ic_bnt_pre" />
+
+        <!-- play or pause button -->
+
+        <ImageButton
+            android:id="@+id/music_toolbar_play"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.2"
+            android:alpha="150" />
+
+        <!-- next music button -->
+
+        <ImageButton
+            android:id="@+id/music_toolbar_next"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.2"
+            android:alpha="150"
+            android:background="@drawable/ic_bnt_next" />
+
+        <!-- menu button -->
+        <ImageButton
+            android:id="@+id/music_toolbar_menu"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.2"
+            android:background="@drawable/ic_bnt_menu" />
+
+    </LinearLayout>
+    
+</RelativeLayout>

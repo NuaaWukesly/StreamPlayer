@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="fill_horizontal"
+    android:orientation="vertical"
+    android:background="@android:color/darker_gray" >
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical|center_horizontal"
+            android:paddingLeft="15dp"
+            android:text="请选择编码(可滚动)"
+            android:textSize="18sp" />
+
+    	</LinearLayout>
+	<LinearLayout 
+	    android:layout_height="3dp"
+	    android:layout_width="fill_parent"
+	    android:background="@android:color/white">
+	</LinearLayout>
+
+	<HorizontalScrollView
+	    android:layout_width="fill_parent"
+	    android:layout_height="70dp"
+	    android:paddingTop="5dp" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp" >
+
+            <Button 
+	        	android:layout_height="match_parent"
+	        	android:layout_width="100dp"
+	        	android:id="@+id/GBK_bnt"
+	        	android:text="GBK"/>
+	    	<Button 
+	        android:layout_height="match_parent"
+	        android:layout_width="100dp"
+	        android:id="@+id/UTF8_bnt"
+	        android:text="UTF-8"/>
+	    <Button 
+	        android:layout_height="match_parent"
+	        android:layout_width="100dp"
+	        android:id="@+id/UTF16_bnt"
+	        android:text="UTF-16"/>
+	    <Button 
+	        android:layout_height="match_parent"
+	        android:layout_width="100dp"
+	        android:id="@+id/Unicode_bnt"
+	        android:text="Unicode"/>
+	    <Button
+                android:id="@+id/LrcCode_cancelbnt"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:text="取消" />
+        </LinearLayout>
+	</HorizontalScrollView>
+
+</LinearLayout>

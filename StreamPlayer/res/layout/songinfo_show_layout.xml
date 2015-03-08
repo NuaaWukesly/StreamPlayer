@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:orientation="horizontal"
+    android:paddingLeft="5dp" 
+    android:id="@+id/music_listchild">
+
+    <ImageView
+        android:id="@+id/songinfo_imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:background="@drawable/ic_mp3"
+        android:clickable="false"
+        android:focusable="false"
+        android:paddingLeft="5dp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:paddingLeft="5dp" >
+
+        <TextView
+            android:id="@+id/songinfo_textview01"
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="0.6"
+            android:clickable="false"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text="未知"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/songinfo_textview02"
+            android:layout_width="fill_parent"
+            android:layout_height="20dp"
+            android:layout_weight="0.4"
+            android:clickable="false"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:text="未知"
+            android:textStyle="italic" />
+
+    </LinearLayout>
+    
+
+</LinearLayout>
